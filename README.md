@@ -1,4 +1,6 @@
-i9070_kernel_CoCore-E_ramdisk
-=============================
+Ramdisk Source for CoCore-E Kernel
+===========================
 
-The ramdisks for CoCore-E
+Set up ramdisk path in defconfig to include ramdisk into zImage
+
+CONFIG_INITRAMFS_SOURCE="{ramdisk_path}"
