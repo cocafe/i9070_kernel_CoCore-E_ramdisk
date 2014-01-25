@@ -555,9 +555,6 @@ service sysinit /system/bin/logwrapper /sbin/busybox run-parts /system/etc/init.
     disabled
     oneshot
 
-on property:sys.boot_completed=1
-    start sysinit
-
 service post-tweaker /sbin/busybox sh /sbin/tweaker.sh
     oneshot
 
