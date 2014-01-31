@@ -632,6 +632,12 @@ service immvibed /system/bin/immvibed
 on property:ro.dumpstate.dmesg=1
     write /proc/sys/kernel/dmesg_restrict 0
 
+# Permissions for NFC
+on property:ro.product.model=GT-I9070P
+    setprop ro.nfc.port "I2C"
+    chmod 0600 /dev/pn544
+    chown nfc nfc /dev/pn544
+
 service p2p_supplicant /system/bin/p2p_supplicant \
         -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
         -e/data/misc/wifi/entropy.bin -puse_p2p_group_interface=1
