@@ -634,6 +634,7 @@ on property:ro.dumpstate.dmesg=1
 
 # Permissions for NFC
 on property:ro.product.model=GT-I9070P
+    insmod /lib/modules/pn544.ko
     setprop ro.nfc.port "I2C"
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
